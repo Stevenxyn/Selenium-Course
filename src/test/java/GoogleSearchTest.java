@@ -80,7 +80,7 @@ public class GoogleSearchTest {
 	@After
 	public void tearDown() {
 
-		driver.quit();
+//		driver.quit();
 		System.out.println("Las pruebas acabaron, se esta reproduciendo el video");
 
 	}

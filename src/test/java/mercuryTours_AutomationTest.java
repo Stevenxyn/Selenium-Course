@@ -17,17 +17,21 @@ class mercuryTours_AutomationTest {
 	//Localizadores
 	By registerLinkLocator = By.linkText("REGISTER");
 	By registerPageLocator = By.xpath("//img[@src ='images/mast_register.gif']");
+
+	By userNameLocator = By.id("email");
+	By passwordLocator = By.id("password");
+	By confirmPasswordLocator = By.cssSelector("input[name='confirmPassword']");
+
+	By registerBtnLocator = By.name("register");
 	
 	
 	@BeforeEach
 	void setUp() throws Exception {
 		//Setiamos la configuracion del entorno
 		
-		String locationDriver = "src/test/resources/chromeDriver/chromedriver-win64/chromedriver.exe";
-		String navegatorDriver = "webdriver.chrome.driver";
 		String pageHome = "https://demo.guru99.com/test/newtours/";
 		
-		System.setProperty(navegatorDriver,locationDriver);
+		System.setProperty("webdriver.chrome.driver","src/test/resources/chromeDriver/chromedriver-win64/chromedriver.exe");
 		
 		//creamos la instancia
 		driver = new ChromeDriver();
@@ -44,6 +48,7 @@ class mercuryTours_AutomationTest {
 	@AfterEach
 	void tearDown() throws Exception {
 		driver.quit();
+		System.out.println("Termino la prueba");
 	}
 
 	@Test
